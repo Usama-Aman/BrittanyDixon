@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.order_review.OrderReviewActivity">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="Order Review"
+            android:textColor="@color/home_heading_text"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/roboto_regular"
+            android:text="3 / 3"
+            android:textColor="@color/home_heading_text"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTitle" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/view_line_top"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@id/consBottom"
+            app:layout_constraintTop_toBottomOf="@id/viewTop">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCartItems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_order_review" />
+
+                <View
+                    android:id="@+id/viewBelowRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/view_line_big"
+                    app:layout_constraintTop_toBottomOf="@id/rvCartItems" />
+
+                <TextView
+                    android:id="@+id/tvDeliveryDetailsHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Delivery details:"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewBelowRV" />
+
+                <TextView
+                    android:id="@+id/tvDeliveryDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Free shipping, 2-3 day"
+                    android:textColor="@color/grey_500"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/tvDeliveryDetailsHead"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeliveryDetailsHead" />
+
+                <TextView
+                    android:id="@+id/btnEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="Edit"
+                    android:textColor="@color/deep_purple_a400"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvDeliveryDetailsHead" />
+
+                <View
+                    android:id="@+id/viewBelowDeliveryDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/view_line_top"
+                    app:layout_constraintTop_toBottomOf="@id/tvDeliveryDetails" />
+
+                <TextView
+                    android:id="@+id/tvShippingAddressHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Shipping address:"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewBelowDeliveryDetails" />
+
+                <TextView
+                    android:id="@+id/tvShippingAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="1117 Tofap Plaza New York, Manhattan 102257"
+                    android:textColor="@color/grey_500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/btnEditShippingAddress"
+                    app:layout_constraintStart_toStartOf="@id/tvShippingAddressHead"
+                    app:layout_constraintTop_toBottomOf="@id/tvShippingAddressHead" />
+
+                <TextView
+                    android:id="@+id/btnEditShippingAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="Edit"
+                    android:textColor="@color/deep_purple_a400"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvShippingAddressHead" />
+
+                <View
+                    android:id="@+id/viewBelowShippingAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/view_line_top"
+                    app:layout_constraintTop_toBottomOf="@id/tvShippingAddress" />
+
+                <TextView
+                    android:id="@+id/tvPaymentMethodHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Payment method:"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewBelowShippingAddress" />
+
+                <TextView
+                    android:id="@+id/tvPaymentMethod"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Visa **** **** **** 6280"
+                    android:textColor="@color/grey_500"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/btnEditPaymentMethod"
+                    app:layout_constraintStart_toStartOf="@id/tvPaymentMethodHead"
+                    app:layout_constraintTop_toBottomOf="@id/tvPaymentMethodHead" />
+
+                <TextView
+                    android:id="@+id/btnEditPaymentMethod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:text="Edit"
+                    android:textColor="@color/deep_purple_a400"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvPaymentMethodHead" />
+
+                <View
+                    android:id="@+id/viewBelowPaymentMethod"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/view_line_top"
+                    app:layout_constraintTop_toBottomOf="@id/tvPaymentMethod" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey_50"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/tvOrderAmountHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Order amount"
+                android:textColor="@color/home_heading_text"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvOrderAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/home_heading_text"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDiscountAmountHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Your total amount of discount:"
+                android:textColor="@color/actual_price"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOrderAmountHead" />
+
+            <TextView
+                android:id="@+id/tvDiscountAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="- $55.02"
+                android:textColor="@color/actual_price"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvOrderAmount" />
+
+            <TextView
+                android:id="@+id/btnContinue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="6dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_btn_main_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:foreground="@drawable/bg_ripple"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="Continue"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvDiscountAmount" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

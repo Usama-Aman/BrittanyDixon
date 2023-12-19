@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.payment.PaymentActivity">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/payment"
+            android:textColor="@color/home_heading_text"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/view_line_top"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <TextView
+            android:id="@+id/tvNameOnCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="26dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/name_on_card"
+            android:textColor="@color/home_heading_text"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewTop" />
+
+        <EditText
+            android:id="@+id/etNameOnCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_et_in_profile"
+            android:fontFamily="@font/roboto_regular"
+            android:inputType="text"
+            android:maxLines="1"
+            android:visibility="gone"
+            android:enabled="false"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
+            android:textColor="@color/home_heading_text"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvNameOnCard"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tvCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/credit_or_debit_card"
+            android:textColor="@color/home_heading_text"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNameOnCard" />
+
+        <EditText
+            android:id="@+id/etCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/bg_et_in_profile"
+            android:fontFamily="@font/roboto_regular"
+            android:inputType="number"
+            android:maxLines="1"
+            android:enabled="false"
+            android:nextFocusDown="@id/etDate"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
+            android:textColor="@color/home_heading_text"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvCard"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:id="@+id/imgVisa"
+            android:layout_width="40dp"
+            android:layout_height="22dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/img_visa"
+            app:layout_constraintBottom_toBottomOf="@id/etCardNumber"
+            app:layout_constraintEnd_toEndOf="@id/etCardNumber"
+            app:layout_constraintTop_toTopOf="@id/etCardNumber" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="18dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/expiration_date"
+            android:textColor="@color/home_heading_text"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etCardNumber" />
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_et_in_profile"
+            android:fontFamily="@font/roboto_regular"
+            android:inputType="date"
+            android:maxLength="5"
+            android:maxLines="1"
+            android:enabled="false"
+            android:nextFocusDown="@id/etCVV"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
+            android:textColor="@color/home_heading_text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/etCVV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tvCVV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/cvv"
+            android:textColor="@color/home_heading_text"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/etCVV"
+            app:layout_constraintTop_toBottomOf="@id/etCardNumber" />
+
+        <EditText
+            android:id="@+id/etCVV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/bg_et_in_profile"
+            android:fontFamily="@font/roboto_regular"
+            android:inputType="number"
+            android:maxLength="3"
+            android:maxLines="1"
+            android:enabled="false"
+            android:nextFocusDown="@id/btnUpdate"
+            android:paddingVertical="12dp"
+            android:paddingStart="16dp"
+            android:textColor="@color/home_heading_text"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/etDate"
+            app:layout_constraintTop_toBottomOf="@id/tvCVV"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bg_btn_main_grey"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:foreground="@drawable/bg_ripple"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:text="@string/update"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/etDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

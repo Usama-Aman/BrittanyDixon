@@ -1,0 +1,5 @@
+file name: brittanyJKSFile
+
+Password 12345678
+Alias: key0
+Password: 12345678

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.AuthViewModel" />
+    </data>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_boarding_1"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".activities.boarding.BoardingActivity">
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="150dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/ic_bd_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/rootView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/skeletonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:maskColor="#F4F4F4"
+                android:visibility="gone"
+                app:maskCornerRadius="20dp"
+                app:shimmerColor="#E6E6E6"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <View
+                        android:layout_width="287dp"
+                        android:layout_height="287dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp"
+                        android:layout_marginHorizontal="80dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="36dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        app:cardCornerRadius="30dp"
+                        app:cardElevation="10dp"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="@id/rvImages"
+                app:layout_constraintTop_toTopOf="@id/rvImages" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvImages"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/ivLogo"
+                app:layout_constraintBottom_toTopOf="@id/indicator"/>
+
+            <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvImages"
+                app:layout_constraintBottom_toTopOf="@id/guideline"
+                app:spi_dotColor="@color/black_of_10"
+                app:spi_dotSelectedColor="@color/black"
+                app:spi_dotSelectedSize="8dp"
+                app:spi_dotSize="6dp"
+                app:spi_dotSpacing="6dp"
+                app:spi_orientation="horizontal"
+                app:spi_visibleDotCount="3" />
+
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/dotsIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dotsColor="@color/black"
+                app:dotsCornerRadius="8dp"
+                app:dotsSize="5dp"
+                android:visibility="gone"
+                app:dotsSpacing="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:dotsWidthFactor="4.5"
+                android:layout_marginTop="5dp"
+                app:layout_constraintTop_toBottomOf="@id/viewPager"
+                app:layout_constraintBottom_toTopOf="@id/guideline"
+                app:selectedDotColor="@color/black"
+                app:progressMode="true"
+                />
+
+            <TextView
+                android:id="@+id/btnLogIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_btn_main_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:foreground="@drawable/bg_ripple"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="@string/log_in"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/indicator" />
+
+            <TextView
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_btn_main_white"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:foreground="@drawable/bg_ripple"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="@string/sign_up"
+                android:textColor="@color/bg_btn_main"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/btnLogIn" />
+
+            <TextView
+                android:id="@+id/btnGuest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:foreground="@drawable/bg_ripple"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="Continue As a Guest"
+                android:textColor="@color/light_blue_a200"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.70"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

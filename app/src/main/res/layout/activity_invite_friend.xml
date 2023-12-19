@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".activities.home.invite_friend.InviteFriendActivity">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgMain"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:src="@drawable/img_invite_friend"
+                app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:barrierDirection="right"
+                app:layout_constraintGuide_percent=".1" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:barrierDirection="left"
+                app:layout_constraintGuide_percent=".9" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivCopyLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_ripple"
+                android:src="@drawable/ic_copy_link"
+                app:layout_constraintStart_toEndOf="@id/g1"
+                app:layout_constraintTop_toBottomOf="@id/imgMain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/copy_link"
+                android:textColor="@color/grey_700"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="@id/ivCopyLink"
+                app:layout_constraintStart_toStartOf="@id/ivCopyLink"
+                app:layout_constraintTop_toBottomOf="@id/ivCopyLink"
+                tools:ignore="SmallSp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivFacebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_ripple"
+                android:src="@drawable/ic_facebook_invite"
+                app:layout_constraintEnd_toStartOf="@id/ivSMS"
+                app:layout_constraintStart_toEndOf="@id/ivCopyLink"
+                app:layout_constraintTop_toBottomOf="@id/imgMain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/facebook"
+                android:textColor="@color/grey_700"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="@id/ivFacebook"
+                app:layout_constraintStart_toStartOf="@id/ivFacebook"
+                app:layout_constraintTop_toBottomOf="@id/ivFacebook"
+                tools:ignore="SmallSp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivSMS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_ripple"
+                android:src="@drawable/ic_sms_invite"
+                app:layout_constraintEnd_toStartOf="@id/ivMessenger"
+                app:layout_constraintStart_toEndOf="@id/ivFacebook"
+                app:layout_constraintTop_toBottomOf="@id/imgMain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/sms"
+                android:textColor="@color/grey_700"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="@id/ivSMS"
+                app:layout_constraintStart_toStartOf="@id/ivSMS"
+                app:layout_constraintTop_toBottomOf="@id/ivSMS"
+                tools:ignore="SmallSp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivMessenger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_ripple"
+                android:src="@drawable/ic_messanger"
+                app:layout_constraintEnd_toStartOf="@id/ivInstagram"
+                app:layout_constraintStart_toEndOf="@id/ivSMS"
+                app:layout_constraintTop_toBottomOf="@id/imgMain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/messenger"
+                android:textColor="@color/grey_700"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="@id/ivMessenger"
+                app:layout_constraintStart_toStartOf="@id/ivMessenger"
+                app:layout_constraintTop_toBottomOf="@id/ivMessenger"
+                tools:ignore="SmallSp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivInstagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_ripple"
+                android:src="@drawable/ic_instagram_invite"
+                app:layout_constraintEnd_toStartOf="@id/ivOther"
+                app:layout_constraintStart_toEndOf="@id/ivMessenger"
+                app:layout_constraintTop_toBottomOf="@id/imgMain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Instagram"
+                android:textColor="@color/grey_700"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="@id/ivInstagram"
+                app:layout_constraintStart_toStartOf="@id/ivInstagram"
+                app:layout_constraintTop_toBottomOf="@id/ivInstagram"
+                tools:ignore="SmallSp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/bg_ripple"
+                android:src="@drawable/ic_other"
+                app:layout_constraintEnd_toStartOf="@id/g2"
+                app:layout_constraintTop_toBottomOf="@id/imgMain" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Other"
+                android:textColor="@color/grey_700"
+                android:textSize="8sp"
+                app:layout_constraintEnd_toEndOf="@id/ivOther"
+                app:layout_constraintStart_toStartOf="@id/ivOther"
+                app:layout_constraintTop_toBottomOf="@id/ivOther"
+                tools:ignore="SmallSp" />
+
+            <TextView
+                android:id="@+id/tvInvite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="64dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Enter Email to invite"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivCopyLink"
+                app:layout_goneMarginTop="64dp" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_et_in_profile"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="yourfriend@email.com"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingVertical="12dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/home_heading_text"
+                android:textColorHint="@color/et_hint"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvInvite"
+                tools:ignore="HardcodedText,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/btnSendInvitation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/bg_btn_main_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:foreground="@drawable/bg_ripple"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="@string/send_invitation"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

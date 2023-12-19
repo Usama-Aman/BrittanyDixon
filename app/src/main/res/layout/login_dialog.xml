@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="26dp">
+
+        <View
+            android:id="@+id/icon"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/circle"
+            android:backgroundTint="@color/red_food_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="You are not logged In"
+            android:textAlignment="center"
+            android:layout_marginHorizontal="24dp"
+            android:textSize="24sp"
+            android:textColor="@color/home_heading_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/icon" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="44dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/roboto_regular"
+            android:singleLine="false"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="@color/home_heading_text"
+            android:text="Please login to enjoy all features."
+            app:layout_constraintEnd_toEndOf="@id/btnOk"
+            app:layout_constraintStart_toStartOf="@id/btnOk"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <TextView
+            android:id="@+id/btnOk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_btn_main_grey"
+            android:backgroundTint="@color/btn_track_order"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:foreground="@drawable/bg_ripple"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:text="Login Now"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

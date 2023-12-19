@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BrittanyDixon</string>
+    <string name="web_link_url">www.brittany.com</string>
+    <string name="web_link_url_scheme">http</string>
+    //social login
+    <!--    <string name="default_web_client_id" translatable="false">230155445398-h7cs8q6kj8e7hhpmuqgbjqudpvh9f6oc.apps.googleusercontent.com</string>-->
+    <string name="facebook_app_id">3151066721883460</string>
+    <string name="fb_login_protocol_scheme">fb3151066721883460</string>
+    <string name="stripe_test_key">pk_test_51JT26OKZ2uppewjAvZ6813xBRF64c9YJCJhSYO5FBnadXAtendeA6HgBb5e3cxCZ3RQcSaVOhCFGFIUngnnHqxTF00GSeLaOEl</string>
+
+    <string name="google_places_key_CP">AIzaSyBhMoC9OLQs1fxPJkPWxdgC9dui6pIKQoA</string>
+    <string name="google_sign_in_key_CP">296446887954-58p0475c2jef9tidj6514uda50tap98t.apps.googleusercontent.com</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_internet_connection">Please check your internet connection</string>
+
+    //boarding screen
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    //sign in screen
+    <string name="sign_in">Sign in</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="sign_up_now">Sign up now!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or">OR</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_apple">Continue with Apple</string>
+    //sign up screen
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login_in">Log in</string>
+    <string name="full_name">Full Name</string>
+    <string name="repeat_password">Confirm Password</string>
+    //forgot password screen
+    <string name="forgot_password_head">Forgot Password</string>
+    <string name="forgot_password_description">Please enter your email address below to receive your password reset instructions.</string>
+    <string name="submit">Submit</string>
+    //create new password screen
+    <string name="new_password">New Password</string>
+    <string name="select_workout_method">Select Suggested\nWorkout Method</string>
+    <string name="must_be_at_least_8_characters">Must be at least 8 characters.</string>
+    <string name="create_new_password_description">Your new password must be different from previous used passwords.</string>
+    <string name="reset_password">Reset Password</string>
+    //Home
+    <string name="workout">Workout</string>
+    <string name="food">Food</string>
+    <string name="shop">Shop</string>
+    <string name="insight">Insight</string>
+    <string name="profile">Profile</string>
+    //workout fragment
+    <string name="essentials_for_beginners">Essentials For Beginners</string>
+    <string name="essentials_for_intermediate">Essentials For Intermediate</string>
+    <string name="essentials_for_advanced">Essentials For Advanced</string>
+    <string name="_7_day_core_strength_building">7 Day Core Strength Building</string>
+    <string name="level_1">Level 1</string>
+    <string name="buy_premium">BUY PREMIUM</string>
+    <string name="avail_access_to_all_workout_masterclasses">Avail access to all workout masterclasses.</string>
+    <string name="view_more">VIEW MORE</string>
+    <string name="search">Search</string>
+    //food fragment
+    <string name="today">Today</string>
+    <string name="_25_april_2021">25 April, 2021</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="snack">Snack</string>
+    <string name="dinner">Dinner</string>
+    <string name="beverages">Beverages</string>
+    <string name="find_recipes">Find Recipes</string>
+    <string name="morning_glory_muffins">Morning Glory Muffins</string>
+    //verify otp
+    <string name="sent_check_your_email">Sent! Check your Email</string>
+    <string name="sent_you_code_description">We have sent an email with PIN code to %s.</string>
+    <string name="resend_code">Resend code</string>
+    <string name="next_step">Next Step</string>
+    <string name="this_could_take_a_few_minutes_to_arive_didn_t_receive_the_pin_we_can_try_again">This could take a few minutes to arive. Didn’t receive the PIN? We can try again.</string>
+    //Insight
+    <string name="your_daily">Your Daily</string>
+    <string name="recommendation">Recommendation</string>
+    <string name="women_s_health">Women\'s Health</string>
+    <string name="insight_recommendation_detail">It’s a common misconception that an effective or high-quality workout can only happen in a gym or studio setting where you have access to large and/or fancy equipment. Others believe making progress toward fitness goals must cost a fortune in both money and time. Here’s some good news: You can get in a quality workout at home by using your own body weight as resistance.\n\nThe recent pandemic made clear how crucial at-home workouts are for individuals who work from home, don’t have access (or time to go) to a gym, and/or busy parents who simply don’t have enough space in their day (mentally or physically) to take more than an hour to exercise.\n\nAt-home workouts that require no equipment and limited space can be quick, simple and effective. Here’s your guide to getting started with an at-home workout routine.</string>
+    //profile setting
+    <string name="profile_setting">Profile Setting</string>
+    <string name="address">Address</string>
+    <string name="change_password">Change Password</string>
+    <string name="payment">Account</string>
+    <string name="log_out">Log out</string>
+    <string name="change_email">Change Email</string>
+    <string name="update">Update</string>
+    <string name="old_password">Current Password</string>
+    <string name="repeat_new_password">Confirm New Password</string>
+    <string name="name_on_card">Name on Card</string>
+    <string name="credit_or_debit_card">Credit or Debit Card</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="cvv">CVV</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="copy_link">Copy Link</string>
+    <string name="facebook">Facebook</string>
+    <string name="sms">SMS</string>
+    <string name="messenger">Messenger</string>
+    <string name="send_invitation">Send Invitation</string>
+    <string name="shipping_address">Shipping Address</string>
+    <string name="street_address">Street Address</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="state">State</string>
+    <string name="city">City</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="filters">Filters</string>
+    <string name="categories">Categories</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="find_now">Find now</string>
+    <string name="congratulations_your_order_is_submitted">Congratulations!\nYour order is submitted</string>
+    <string name="your_items_are_on_the_way_and_should_arrive_shortly">Your items are on the way and \nshould arrive shortly</string>
+    //shops tab
+    <string name="new_arrivals">New arrivals</string>
+    <string name="what_s_trending">What’s trending</string>
+    <string name="history">History</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="checkout">Checkout</string>
+    <string name="falcon_clear_pink">Falcon Clear Pink</string>
+    <string name="nike">Nike</string>
+    <string name="send_feedback">Send Feedback</string>
+    <string name="shipping">Shipping</string>
+    <string name="edit">Edit</string>
+    <string name="my_orders">My Orders</string>
+    <string name="estimated_delivery">Estimated delivery</string>
+    <string name="order_delivered">Order delivered</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="number_picker_formatter">%02d</string>
+    <string name="font_bold">roboto_bold</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="toast_success">Success</string>
+    <string name="toast_error">Error</string>
+    <string name="see_more">+ see more</string>
+    <string name="dietary_preferences">Dietary Preferences</string>
+    <string name="btn_continue">Continue</string>
+    <string name="finish">Finish</string>
+
+    <string name="Ingredient_details">These muffins are substantial enough to be satisfying day-starters or significant snacks. Chock-full of produce, they’re a great way to get more produce into your day (organic, of course). What’s more, these muffins have some staying power; they actually taste better a day after baking, when the flavors have married. Store them at room temperature, covered, for up to 3 days, or freeze them for up to 2 months. Position a rack in the lower third of the oven and preheat to 350 degrees F.</string>
+    <string name="duration">Duration</string>
+    <string name="delete">Delete</string>
+    <string name="country">Country</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="dollar_sign">\u0024</string>
+    <string name="coming_podcast">Soon we will launch podcast for you. I can\'t wait to share the tips and tricks I\'ve learned. \nStick around.</string>
+    <string name="coming_shop_details">It\'s going to be more sophisticated and simple. We’ll be up and running soon. Stay tuned.</string>
+    <string name="coming_shop_title">Get ready! Somthing realy cool is coming!</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="got_it">Got it!</string>
+
+    <string-array name="reward">
+        <item>Great Job</item>
+        <item>You Rock</item>
+        <item>Killing it</item>
+        <item>Keep it Up</item>
+        <item>Crushing it</item>
+        <item>Awesome Work</item>
+    </string-array>
+</resources>

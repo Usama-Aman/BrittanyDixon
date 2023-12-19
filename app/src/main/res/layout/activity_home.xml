@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.HomeActivity">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/consBottom"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/view"
+            android:background="@color/bg_line_main"
+            app:layout_constraintBottom_toTopOf="@id/consBottom" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:id="@+id/ivWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_workout_active"
+                app:layout_constraintBottom_toTopOf="@id/tvWorkout"
+                app:layout_constraintEnd_toStartOf="@id/ivFood"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/workout"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ivWorkout"
+                app:layout_constraintStart_toStartOf="@id/ivWorkout"
+                app:layout_constraintTop_toBottomOf="@id/ivWorkout"
+                tools:ignore="SmallSp" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupWorkout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ivWorkout,tvWorkout,viewWorkout" />
+
+            <View
+                android:id="@+id/viewWorkout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/viewFood"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_food"
+                app:layout_constraintBottom_toTopOf="@id/tvFood"
+                app:layout_constraintEnd_toStartOf="@id/ivShop"
+                app:layout_constraintStart_toEndOf="@id/ivWorkout"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/food"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ivFood"
+                app:layout_constraintStart_toStartOf="@id/ivFood"
+                app:layout_constraintTop_toBottomOf="@id/ivFood"
+                tools:ignore="SmallSp" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ivFood,tvFood,viewFood" />
+
+            <View
+                android:id="@+id/viewFood"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/viewShop"
+                app:layout_constraintStart_toEndOf="@id/viewWorkout"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_shop"
+                app:layout_constraintBottom_toTopOf="@id/tvShop"
+                app:layout_constraintEnd_toStartOf="@id/ivInsight"
+                app:layout_constraintStart_toEndOf="@id/ivFood"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/shop"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ivShop"
+                app:layout_constraintStart_toStartOf="@id/ivShop"
+                app:layout_constraintTop_toBottomOf="@id/ivShop"
+                tools:ignore="SmallSp" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupShop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ivShop,tvShop,viewShop" />
+
+            <View
+                android:id="@+id/viewShop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/viewInsight"
+                app:layout_constraintStart_toEndOf="@id/viewFood"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivInsight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_insight"
+                app:layout_constraintBottom_toTopOf="@id/tvShop"
+                app:layout_constraintEnd_toStartOf="@id/ivProfile"
+                app:layout_constraintStart_toEndOf="@id/ivShop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvInsight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/insight"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ivInsight"
+                app:layout_constraintStart_toStartOf="@id/ivInsight"
+                app:layout_constraintTop_toBottomOf="@id/ivInsight"
+                tools:ignore="SmallSp" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupInsight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ivInsight,tvInsight,viewInsight" />
+
+            <View
+                android:id="@+id/viewInsight"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/viewProfile"
+                app:layout_constraintStart_toEndOf="@id/viewShop"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_profile"
+                app:layout_constraintBottom_toTopOf="@id/tvShop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ivInsight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile"
+                android:textColor="@color/black"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ivProfile"
+                app:layout_constraintStart_toStartOf="@id/ivProfile"
+                app:layout_constraintTop_toBottomOf="@id/ivProfile"
+                tools:ignore="SmallSp" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="ivProfile,tvProfile,viewProfile" />
+
+            <View
+                android:id="@+id/viewProfile"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewInsight"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

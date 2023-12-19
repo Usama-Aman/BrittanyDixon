@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/productConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:context=".activities.home.product_page.ProductPageActivity">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:transitionName="transitionImage"
+                app:layout_constraintBottom_toTopOf="@id/g1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator
+                android:id="@+id/dotsIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/viewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:spi_dotColor="@color/black_of_10"
+                app:spi_dotSelectedColor="@color/black"
+                app:spi_dotSelectedSize="5dp"
+                app:spi_dotSize="5dp"
+                app:spi_dotSpacing="4.5dp"
+                app:spi_orientation="horizontal" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:barrierDirection="right"
+                app:layout_constraintGuide_percent=".45" />
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="38dp"
+                android:background="@drawable/bg_ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="8dp"
+                android:src="@drawable/ic_cart_item"
+                app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:src="@drawable/ic_oval_red"
+                app:layout_constraintEnd_toEndOf="@id/ivCart"
+                app:layout_constraintRight_toLeftOf="@id/ivCart"
+                app:layout_constraintTop_toTopOf="@id/ivCart" />
+
+            <TextView
+                android:id="@+id/tvCartCount"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+                app:layout_constraintBottom_toBottomOf="@id/ivCount"
+                app:layout_constraintEnd_toEndOf="@id/ivCount"
+                app:layout_constraintStart_toStartOf="@id/ivCount"
+                app:layout_constraintTop_toTopOf="@id/ivCount"
+                tools:ignore="HardcodedText,SmallSp" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutMain"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewPager">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Heart Print Bottom"
+                    android:textColor="@color/pink_a400"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivHeart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_heart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvNameOfProduct"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Active Tie-Dye Shorts"
+                    android:textColor="@color/blue_grey_900"
+                    android:textSize="27sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivHeart"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+                <RatingBar
+                    android:id="@+id/rbProduct"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:isIndicator="true"
+                    android:progressTint="@color/amber_a400"
+                    android:rating="5"
+                    android:secondaryProgressTint="@color/amber_a400"
+                    app:layout_constraintStart_toStartOf="@id/tvNameOfProduct"
+                    app:layout_constraintTop_toBottomOf="@id/tvNameOfProduct" />
+
+                <TextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="5.0"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/rbProduct"
+                    app:layout_constraintStart_toEndOf="@id/rbProduct"
+                    app:layout_constraintTop_toTopOf="@id/rbProduct" />
+
+                <TextView
+                    android:id="@+id/tvDiscountedPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="start"
+                    android:text="$130.00"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/rbProduct"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvActualPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="start"
+                    android:text="$130.00"
+                    android:textColor="@color/actual_price"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvDiscountedPrice"
+                    tools:ignore="SmallSp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/actual_price"
+                    app:layout_constraintBottom_toBottomOf="@id/tvActualPrice"
+                    app:layout_constraintEnd_toEndOf="@id/tvActualPrice"
+                    app:layout_constraintStart_toStartOf="@id/tvActualPrice"
+                    app:layout_constraintTop_toTopOf="@id/tvActualPrice" />
+
+                <ImageView
+                    android:id="@+id/btnPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_btn_plus"
+                    app:layout_constraintBottom_toBottomOf="@id/tvActualPrice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvActualPrice" />
+
+                <TextView
+                    android:id="@+id/tvCount"
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/tv_counter"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btnPlus"
+                    app:layout_constraintEnd_toStartOf="@id/btnPlus"
+                    app:layout_constraintTop_toTopOf="@id/btnPlus" />
+
+                <ImageView
+                    android:id="@+id/btnMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_btn_negative"
+                    app:layout_constraintBottom_toBottomOf="@id/btnPlus"
+                    app:layout_constraintEnd_toStartOf="@id/tvCount"
+                    app:layout_constraintTop_toTopOf="@id/btnPlus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Qty"
+                    android:textColor="@color/blue_grey_800"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/btnPlus"
+                    app:layout_constraintEnd_toStartOf="@id/btnMinus"
+                    app:layout_constraintTop_toTopOf="@id/btnPlus" />
+
+                <View
+                    android:id="@+id/viewBelowQty"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/bg_line_main"
+                    app:layout_constraintTop_toBottomOf="@id/tvActualPrice" />
+
+                <TextView
+                    android:id="@+id/tvDetailHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Details"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/viewBelowQty" />
+
+                <TextView
+                    android:id="@+id/tvDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/grey_700"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetailHead"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/tvSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Size"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvDetail" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scrollRvSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvSize">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintStart_toStartOf="@id/tvTitle"
+                        app:layout_constraintTop_toBottomOf="@id/tvSize"
+                        tools:itemCount="10"
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/item_product_size" />
+                </androidx.core.widget.NestedScrollView>
+
+
+                <TextView
+                    android:id="@+id/tvColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Color"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="@id/tvSize"
+                    app:layout_constraintTop_toBottomOf="@id/scrollRvSize" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvColors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvColor"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/item_product_colors" />
+
+                <LinearLayout
+                    android:id="@+id/btnAddToCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/bg_btn_main_grey"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="@drawable/bg_ripple"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvColors">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="12dp"
+                        android:src="@drawable/ic_cart_item"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tvCartButtonText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:paddingVertical="16dp"
+                        android:text="@string/add_to_cart"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.faltenreich.skeletonlayout.SkeletonLayout
+                android:id="@+id/skeletonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/g1"
+                app:maskColor="#F4F4F4"
+                app:maskCornerRadius="20dp"
+                app:shimmerColor="#E6E6E6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    app:layout_constraintTop_toBottomOf="@id/g1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="18dp"
+                                android:layout_marginEnd="50dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="36dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="30dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+
+                            <View
+                                android:layout_width="120dp"
+                                android:layout_height="18dp"
+                                android:layout_marginTop="2dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="40dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+
+                            <View
+                                android:layout_width="38dp"
+                                android:layout_height="34dp"
+                                android:layout_marginStart="10dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+
+                            <View
+                                android:layout_width="30dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="10dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+
+                            <View
+                                android:layout_width="38dp"
+                                android:layout_height="34dp"
+                                android:layout_marginStart="10dp"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="10dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginEnd="60dp"
+                        app:cardCornerRadius="2dp"
+                        app:cardElevation="10dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="80dp"
+                        app:cardCornerRadius="2dp"
+                        app:cardElevation="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginEnd="8dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="28dp"
+                        android:layout_marginEnd="80dp"
+                        app:cardCornerRadius="2dp"
+                        app:cardElevation="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginEnd="3dp"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="54dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="24dp"
+                        app:cardCornerRadius="2dp"
+                        app:cardElevation="10dp" />
+                </LinearLayout>
+
+            </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

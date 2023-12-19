@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:foregroundGravity="center">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImage"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            app:cardBackgroundColor="@color/view_line_big"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgMain"
+                android:layout_width="match_parent"
+                android:scaleType="centerCrop"
+                android:layout_height="match_parent"
+                android:transitionName="transitionImage"
+                android:src="@drawable/img_new_arrival" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="start"
+            android:text="Active Tie-Dye Hoodie"
+            android:textColor="@color/dark_blue"
+            android:textSize="14sp"
+            android:transitionName="title"
+            app:layout_constraintEnd_toEndOf="@id/cvImage"
+            app:layout_constraintStart_toStartOf="@id/cvImage"
+            app:layout_constraintTop_toBottomOf="@id/cvImage" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="start"
+            android:text="Hoodies"
+            android:textColor="@color/blue_grey_600"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@id/cvImage"
+            app:layout_constraintStart_toStartOf="@id/cvImage"
+            app:layout_constraintTop_toBottomOf="@id/tvName"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tvDiscountedPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="start"
+            android:text="$67.40"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/cvImage"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/tvActualPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="start"
+            android:text="$87.00"
+            android:textColor="@color/actual_price"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/tvDiscountedPrice"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory"
+            tools:ignore="SmallSp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/actual_price"
+            app:layout_constraintBottom_toBottomOf="@id/tvActualPrice"
+            app:layout_constraintEnd_toEndOf="@id/tvActualPrice"
+            app:layout_constraintStart_toStartOf="@id/tvActualPrice"
+            app:layout_constraintTop_toTopOf="@id/tvActualPrice" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

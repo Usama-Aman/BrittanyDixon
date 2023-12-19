@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_50"
+        tools:context=".activities.home.food_tab.FoodFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:id="@+id/viewTop"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/food"
+                android:textColor="@color/home_heading_text"
+                android:textSize="26sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHead">
+
+                <TextView
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/bg_et_search"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/ic_search_active"
+                    android:drawablePadding="8dp"
+                    android:focusable="true"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center_vertical"
+                    android:hint="@string/search"
+                    android:maxLines="1"
+                    android:padding="8dp"
+                    android:paddingVertical="9dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/et_hint"
+                    android:textSize="14sp"
+                    tools:ignore="RtlSymmetry" />
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/consSearch">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/consSearch">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvDay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/today"
+                        android:textColor="@color/home_heading_text"
+                        android:textSize="26sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvCompleteDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginBottom="5dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/_25_april_2021"
+                        android:textColor="@color/home_heading_text"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@id/tvDay"
+                        app:layout_constraintStart_toEndOf="@id/tvDay" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/tabConstraint"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintTop_toBottomOf="@id/tvDay">
+
+                        <TextView
+                            android:id="@+id/tvTabBreakFast"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:text="@string/breakfast"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@id/tvTabLunch"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tvTabLunch"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:text="@string/lunch"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@id/tvTabSnack"
+                            app:layout_constraintStart_toEndOf="@id/tvTabBreakFast"
+                            app:layout_constraintTop_toTopOf="@id/tvTabBreakFast" />
+
+                        <TextView
+                            android:id="@+id/tvTabSnack"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:text="@string/snack"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@id/tvTabDinner"
+                            app:layout_constraintStart_toEndOf="@id/tvTabLunch"
+                            app:layout_constraintTop_toTopOf="@id/tvTabBreakFast" />
+
+                        <TextView
+                            android:id="@+id/tvTabDinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:text="@string/dinner"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toStartOf="@id/tvTabBeverages"
+                            app:layout_constraintStart_toEndOf="@id/tvTabSnack"
+                            app:layout_constraintTop_toTopOf="@id/tvTabBreakFast" />
+
+                        <TextView
+                            android:id="@+id/tvTabBeverages"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:paddingVertical="10dp"
+                            android:text="@string/beverages"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/tvTabDinner"
+                            app:layout_constraintTop_toTopOf="@id/tvTabBreakFast" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <com.faltenreich.skeletonlayout.SkeletonLayout
+                        android:id="@+id/skeletonLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="14dp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toBottomOf="@id/tabConstraint"
+                        app:maskColor="#F4F4F4"
+                        app:maskCornerRadius="20dp"
+                        app:shimmerColor="#E6E6E6">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="140dp"
+                                android:layout_marginHorizontal="18dp"
+                                app:cardCornerRadius="30dp"
+                                app:cardElevation="10dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="28dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="12dp">
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="34dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+<!--                                <View-->
+<!--                                    android:layout_width="0dp"-->
+<!--                                    android:layout_height="34dp"-->
+<!--                                    android:layout_marginHorizontal="5dp"-->
+<!--                                    android:layout_weight="1"-->
+<!--                                    app:cardCornerRadius="30dp"-->
+<!--                                    app:cardElevation="10dp" />-->
+
+                                <View
+                                    android:layout_width="0dp"
+                                    android:layout_height="34dp"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:layout_weight="1"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="30dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="20dp"
+                                app:cardCornerRadius="30dp"
+                                app:cardElevation="10dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="95dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="20dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="116dp"
+                                    android:layout_height="85dp"
+                                    android:layout_marginStart="5dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        android:layout_marginTop="6dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_weight="2"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="95dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="116dp"
+                                    android:layout_height="85dp"
+                                    android:layout_marginStart="5dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        android:layout_marginTop="6dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_weight="2"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="95dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="116dp"
+                                    android:layout_height="85dp"
+                                    android:layout_marginStart="5dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        android:layout_marginTop="6dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_weight="2"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="95dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="116dp"
+                                    android:layout_height="85dp"
+                                    android:layout_marginStart="5dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        android:layout_marginTop="6dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_weight="2"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="95dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="116dp"
+                                    android:layout_height="85dp"
+                                    android:layout_marginStart="5dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        android:layout_marginTop="6dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_weight="2"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="95dp"
+                                android:layout_marginHorizontal="18dp"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="116dp"
+                                    android:layout_height="85dp"
+                                    android:layout_marginStart="5dp"
+                                    app:cardCornerRadius="30dp"
+                                    app:cardElevation="10dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="16dp"
+                                    android:orientation="vertical">
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="18dp"
+                                        android:layout_marginTop="6dp"
+                                        app:cardCornerRadius="30dp"
+                                        app:cardElevation="10dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:orientation="horizontal">
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_weight="2"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="18dp"
+                                            android:layout_marginStart="16dp"
+                                            android:layout_weight="1"
+                                            app:cardCornerRadius="30dp"
+                                            app:cardElevation="10dp" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/mainLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintTop_toBottomOf="@id/tabConstraint">
+
+                        <androidx.viewpager2.widget.ViewPager2
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:transitionName="transitionImage"
+                            app:layout_constraintTop_toTopOf="parent"/>
+
+                        <TextView
+                            android:id="@+id/tvFindRecipes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="20dp"
+                            android:fontFamily="@font/roboto_bold"
+                            android:text="@string/find_recipes"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="20sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/viewPager" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvFindRecipes"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:clipToPadding="false"
+                            android:layoutAnimation="@anim/layout_animation_down_to_up"
+                            android:nestedScrollingEnabled="false"
+                            android:paddingHorizontal="18dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvFindRecipes"
+                            tools:listitem="@layout/item_find_recipes" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/llNoData"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:orientation="vertical"
+                            android:padding="25dp"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@id/tvFindRecipes">
+
+
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:background="@color/transparent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:lottie_autoPlay="true"
+                                app:lottie_fileName="no_data_found_animation.json"
+                                app:lottie_loop="true"
+                                app:lottie_speed="1" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

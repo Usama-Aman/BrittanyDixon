@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.profile_tab.BookmarkFragment">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/workoutLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:paddingBottom="14dp"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tvWorkoutTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Your Selected Workouts"
+                            android:textColor="@color/pink_a400"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivWorkoutForward"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:src="@drawable/ic_forward"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivWorkoutCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_workout"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvWorkoutTitle" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@id/rvWorkout"
+                            app:layout_constraintEnd_toEndOf="@id/ivWorkoutCategory"
+                            app:layout_constraintStart_toStartOf="@id/ivWorkoutCategory"
+                            app:layout_constraintTop_toBottomOf="@id/ivWorkoutCategory" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvWorkout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="17dp"
+                            android:layout_marginTop="12dp"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/ivWorkoutCategory"
+                            app:layout_constraintTop_toBottomOf="@id/tvWorkoutTitle"
+                            tools:listitem="@layout/item_bookmark_list" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/shopLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:paddingBottom="14dp"
+                        app:layout_constraintTop_toBottomOf="@id/workoutLayout">
+
+                        <TextView
+                            android:id="@+id/tvShopTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Your Selected Products"
+                            android:textColor="@color/pink_a400"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivShopForward"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:src="@drawable/ic_forward"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivShopCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_shop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvShopTitle" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginBottom="14dp"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@id/rvShop"
+                            app:layout_constraintEnd_toEndOf="@id/ivShopCategory"
+                            app:layout_constraintStart_toStartOf="@id/ivShopCategory"
+                            app:layout_constraintTop_toBottomOf="@id/ivShopCategory" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvShop"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="17dp"
+                            android:layout_marginTop="12dp"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="false"
+                            android:orientation="horizontal"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/ivShopCategory"
+                            app:layout_constraintTop_toBottomOf="@id/tvShopTitle"
+                            tools:listitem="@layout/item_history_shops_tab" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/foodLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:paddingBottom="14dp"
+                        app:layout_constraintTop_toBottomOf="@id/shopLayout">
+
+                        <TextView
+                            android:id="@+id/tvFoodTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Your Selected Foods"
+                            android:textColor="@color/pink_a400"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivFoodForward"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:src="@drawable/ic_forward"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivFoodCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_food"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvFoodTitle" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@id/rvFood"
+                            app:layout_constraintEnd_toEndOf="@id/ivFoodCategory"
+                            app:layout_constraintStart_toStartOf="@id/ivFoodCategory"
+                            app:layout_constraintTop_toBottomOf="@id/ivFoodCategory" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvFood"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="17dp"
+                            android:layout_marginTop="12dp"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/ivFoodCategory"
+                            app:layout_constraintTop_toBottomOf="@id/tvFoodTitle"
+                            tools:listitem="@layout/item_bookmark_list" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/insightLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:paddingBottom="14dp"
+                        app:layout_constraintTop_toBottomOf="@id/foodLayout">
+
+                        <TextView
+                            android:id="@+id/tvInsightTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Your Selected Insights"
+                            android:textColor="@color/pink_a400"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivInsightForward"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="14dp"
+                            android:src="@drawable/ic_forward"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ivInsightCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="18dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_insight"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tvInsightTitle" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="6dp"
+                            android:background="@color/black"
+                            app:layout_constraintBottom_toBottomOf="@id/rvInsight"
+                            app:layout_constraintEnd_toEndOf="@id/ivInsightCategory"
+                            app:layout_constraintStart_toStartOf="@id/ivInsightCategory"
+                            app:layout_constraintTop_toBottomOf="@id/ivInsightCategory" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvInsight"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="17dp"
+                            android:layout_marginTop="12dp"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="false"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/ivInsightCategory"
+                            app:layout_constraintTop_toBottomOf="@id/tvInsightTitle"
+                            tools:listitem="@layout/item_bookmark_list" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/noData"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_gravity="top"
+                        android:layout_marginVertical="50dp"
+                        android:background="@color/transparent"
+                        android:visibility="gone"
+                        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="no_data_found_animation.json"
+                        app:lottie_loop="true"
+                        app:lottie_speed="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.core.widget.NestedScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </LinearLayout>
+
+</layout>

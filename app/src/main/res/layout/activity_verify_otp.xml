@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.AuthViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.auth.verify_otp.VerifyOtpActivity">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/sent_check_your_email"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+        <TextView
+            android:id="@+id/tvDescriptionEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/roboto_regular"
+            android:lineHeight="18dp"
+            android:text="@string/sent_you_code_description"
+            android:textColor="@color/grey_900_off_70"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHead" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDigit1"
+            android:layout_width="62dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_et_otp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:hint="-"
+            android:textColor="@color/black"
+            android:textColorHint="@color/et_hint"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/tvDigit2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDescriptionEmail"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDigit2"
+            android:layout_width="62dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_et_otp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:hint="-"
+            android:textColor="@color/black"
+            android:textColorHint="@color/et_hint"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+            app:layout_constraintEnd_toStartOf="@+id/tvDigit3"
+            app:layout_constraintStart_toEndOf="@+id/tvDigit1"
+            app:layout_constraintTop_toTopOf="@+id/tvDigit1"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDigit3"
+            android:layout_width="62dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_et_otp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:hint="-"
+            android:textColor="@color/black"
+            android:textColorHint="@color/et_hint"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+            app:layout_constraintEnd_toStartOf="@+id/tvDigit4"
+            app:layout_constraintStart_toEndOf="@+id/tvDigit2"
+            app:layout_constraintTop_toTopOf="@+id/tvDigit1"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDigit4"
+            android:layout_width="62dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_et_otp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:hint="-"
+            android:textColor="@color/black"
+            android:textColorHint="@color/et_hint"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDigit3"
+            app:layout_constraintTop_toTopOf="@+id/tvDigit1"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_code"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@android:color/transparent"
+            android:cursorVisible="false"
+            android:focusable="true"
+            android:gravity="top|start"
+            android:inputType="number"
+            android:maxEms="4"
+            android:maxLength="4"
+            android:textColor="@android:color/transparent"
+            android:textColorHint="@android:color/transparent"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDigit1"
+            app:layout_constraintEnd_toEndOf="@+id/tvDigit4"
+            app:layout_constraintStart_toStartOf="@+id/tvDigit1"
+            app:layout_constraintTop_toTopOf="@+id/tvDigit1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:gravity="center_horizontal"
+            android:text="@string/this_could_take_a_few_minutes_to_arive_didn_t_receive_the_pin_we_can_try_again"
+            android:textColor="@color/grey_900"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tvResendCode"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvResendCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:padding="10dp"
+            android:text="@string/resend_code"
+            android:textColor="@color/light_blue_a700"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/btnNextStep"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/btnNextStep"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/bg_btn_main_grey"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:foreground="@drawable/bg_ripple"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:text="@string/next_step"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

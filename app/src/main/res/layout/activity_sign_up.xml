@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.AuthViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="24dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".activities.auth.signup.SignUpActivity">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_ripple"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSignUpHead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/sign_up"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivBack" />
+
+            <TextView
+                android:id="@+id/tvAlreadyHaveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/already_have_an_account"
+                android:textColor="@color/grey_900_off_70"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvSignUpHead"
+                app:layout_constraintTop_toBottomOf="@id/tvSignUpHead" />
+
+            <TextView
+                android:id="@+id/tvLoginNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/login_in"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvAlreadyHaveAccount"
+                app:layout_constraintStart_toEndOf="@id/tvAlreadyHaveAccount"
+                app:layout_constraintTop_toTopOf="@id/tvAlreadyHaveAccount" />
+
+            <TextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/full_name"
+                android:textColor="@color/indigo_200"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvSignUpHead"
+                app:layout_constraintTop_toBottomOf="@id/tvAlreadyHaveAccount" />
+
+            <EditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:backgroundTint="@color/view_line_color"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvFullName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="-25dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/etFullName" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/email"
+                android:textColor="@color/indigo_200"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvSignUpHead"
+                app:layout_constraintTop_toBottomOf="@id/etFullName" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:backgroundTint="@color/view_line_color"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="-25dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+            <TextView
+                android:id="@+id/tvPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/password"
+                android:textColor="@color/indigo_200"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvSignUpHead"
+                app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:backgroundTint="@color/view_line_color"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvPassword" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="-25dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+            <ImageView
+                android:id="@+id/ivPasswordToggle"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="5dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_show_password"
+                app:layout_constraintBottom_toBottomOf="@id/etPassword"
+                app:layout_constraintRight_toRightOf="@id/etPassword"
+                app:layout_constraintTop_toTopOf="@id/etPassword" />
+
+            <TextView
+                android:id="@+id/tvRepeatPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/repeat_password"
+                android:textColor="@color/indigo_200"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tvSignUpHead"
+                app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+            <EditText
+                android:id="@+id/etRepeatPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:backgroundTint="@color/view_line_color"
+                android:fontFamily="@font/roboto_regular"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/tvRepeatPassword" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilRepeatPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="-25dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/etRepeatPassword" />
+
+            <ImageView
+                android:id="@+id/ivRepeatPasswordToggle"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="5dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_show_password"
+                app:layout_constraintBottom_toBottomOf="@id/etRepeatPassword"
+                app:layout_constraintRight_toRightOf="@id/etRepeatPassword"
+                app:layout_constraintTop_toTopOf="@id/etRepeatPassword" />
+
+            <TextView
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/bg_btn_main_grey"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@font/roboto_medium"
+                android:foreground="@drawable/bg_ripple"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="@string/sign_up"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/etRepeatPassword" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</layout>

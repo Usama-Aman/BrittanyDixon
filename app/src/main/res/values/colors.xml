@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="black_of_10">#1A000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF3E49</color>
+    <color name="black_of_18">#2E000000</color>
+
+
+    <color name="grey_900">#292929</color>
+    <color name="grey_900_off_70">#B3292929</color>
+    <color name="indigo_50">#EEEEF4</color>
+    <color name="blue_grey_900">#343938</color>
+    <color name="black_off_70">#B3000000</color>
+    <color name="pink_100">#FDC1DF</color>
+    <color name="red_food_type">#E02020</color>
+    <color name="indigo_200">#A3A9C5</color>
+    <color name="cyan_50">#EBF8FB</color>
+    <color name="red_50">#FFF3F9</color>
+    <color name="btn_facebook">#F1F3F9</color>
+    <color name="btn_google">#FDEEED</color>
+    <color name="btn_apple">#F5F5F5</color>
+    <color name="view_line_color">#AFAFAF</color>
+    <color name="grey_800">#4D4D4D</color>
+    <color name="bg_line_main">#EBEBEB</color>
+    <color name="bottom_bar_text_selected">#070707</color>
+    <color name="pink_a400">#F70880</color>
+    <color name="blue_grey_600">#626678</color>
+    <color name="red_a200">#FF544C</color>
+    <color name="home_heading_text">#2D2D2F</color>
+    <color name="tab_selected">#2D2D2F</color>
+    <color name="tab_unselected">#662D2D2F</color>
+    <color name="et_hint">#332D2D2F</color>
+    <color name="bg_search">#F6F6F9</color>
+    <color name="grey_50">#FAFAFA</color>
+    <color name="light_blue_a700">#0091FF</color>
+    <color name="bg_btn_main">#494F4D</color>
+    <color name="mine_shaft">#383838</color>
+    <color name="grey_700">#696969</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="view_line_top">#E7E9EE</color>
+    <color name="view_line_big">#F6F6F6</color>
+    <color name="grey_300">#DDDDDD</color>
+    <color name="blue_a700">#2967FF</color>
+    <color name="foam">#ECF8FC</color>
+    <color name="cyan_400">#21A7D3</color>
+    <color name="blue_grey_50">#F2F4F6</color>
+    <color name="blue_grey_300">#8F9BB3</color>
+    <color name="btn_track_order">#28B0D7</color>
+    <color name="dark_blue">#212B36</color>
+    <color name="actual_price">#8D8D8E</color>
+    <color name="grey_500">#979797</color>
+    <color name="tv_counter">#2C393F</color>
+    <color name="blue_grey_800">#393E46</color>
+    <color name="light_green_200">#D2DBA8</color>
+    <color name="manatee">#929AAB</color>
+    <color name="dark_blue_900">#263238</color>
+    <color name="deep_purple_a400">#503BFF</color>
+    <color name="grey_600">#707070</color>
+    <color name="light_green_900">#379D11</color>
+    <color name="green_900">#076A04</color>
+    <color name="light_blue_50">#DAF6FE</color>
+    <color name="cyan_200">#9ADAEC</color>
+    <color name="blue_900">#222B45</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey_400">#CACACA</color>
+    <color name="circle_600">#90ee02</color>
+    <color name="rest_progress_color">#19A0D5</color>
+    <color name="rest_background_color">#A7DEF3</color>
+
+
+    <!--Pix colors-->
+    <color name="video_counter_color_pix">#E53935</color>
+    <color name="primary_color_pix">#28B0D7</color>
+    <color name="primary_light_color_pix">#28B0D7</color>
+    <color name="surface_color_pix">#ffffff</color>
+    <color name="text_color_pix">#807f7f</color>
+    <color name="auth_edittext_border">#B8B8B8</color>
+
+    <color name="blue_grey_700">#545B64</color>
+    <color name="blue_grey_100">#CFD4DB</color>
+    <color name="bg_light_blue_50">#E6F4FF</color>
+
+    <color name="exercise_set_background_dark">#34BCF3</color>
+    <color name="exercise_set_background_light">#2B32C5FF</color>
+
+    <color name="light_blue_a200">#32C5FF</color>
+    <color name="orange_a700">#FA6400</color>
+    <color name="light_green_a700">#6DD400</color>
+    <color name="bg_blue_grey_300">#7BA4B5</color>
+    <color name="bg_exercise_light_blue_50">#F5FDFF</color>
+
+    <color name="podcast_card_view_background">#44D7B6</color>
+    <color name="podcast_singer_name">#7A7A7A</color>
+
+    <color name="amber_a400">#F4C804</color>
+    <color name="grey_300_alpha_50">#F6F6F6</color>
+    <color name="light_blue_50_alpha_78">#C8D1F2FF</color>
+    <color name="light_blue_a100_alpha_78">#C87EDAFF</color>
+    <color name="text_grey_800">#3F3F3F</color>
+    <color name="dollar_sign_grey_800">#414141</color>
+    <color name="black_alpha_70">#B3000000</color>
+    <color name="blue_grey_500_alpha_8">#14667D86</color>
+    <color name="light_grey">#CFCFCF</color>
+    <color name="lighter_grey">#F2F2F2</color>
+    <color name="blue_grey_text_600">#5F6569</color>
+    <color name="blue_grey_text_900">#1E272A</color>
+    <color name="bg_ingredient">#2932C5FF</color>
+    <color name="blue_grey_900_alpha_50">#8012131A</color>
+    <color name="red_a400">#FF1657</color>
+    <color name="light_green_text_a700">#4CDE23</color>
+    <color name="cyan_500">#00C7DC</color>
+    <color name="bg_progress_grey_100">#F3F3F3</color>
+    <color name="red_a400_alpha_78">#C8FF1657</color>
+    <color name="light_green_text_a700_alpha_78">#C84CDE23</color>
+    <color name="cyan_500_alpha_78">#C800C7DC</color>
+
+</resources>

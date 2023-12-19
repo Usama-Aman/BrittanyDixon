@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.cart.CartActivity">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="Shopping Cart"
+            android:textColor="@color/home_heading_text"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/view_line_top"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/cartConstraint"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="20dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewTop">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_cart_screen" />
+
+                <EditText
+                    android:id="@+id/etDiscountCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_et_discount_code"
+                    android:fontFamily="@font/roboto_regular"
+                    android:hint="Discount Code"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:paddingVertical="9dp"
+                    android:paddingStart="8dp"
+                    android:textColor="@color/home_heading_text"
+                    android:textColorHint="@color/et_hint"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@id/rvCart"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/btnApply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_btn_apply_cart"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/roboto_medium"
+                    android:foreground="@drawable/bg_ripple"
+                    android:gravity="center"
+                    android:paddingHorizontal="18dp"
+                    android:text="Apply"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/etDiscountCode"
+                    app:layout_constraintEnd_toEndOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toTopOf="@id/etDiscountCode" />
+
+                <TextView
+                    android:id="@+id/tvSubtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Subtotal"
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toBottomOf="@id/etDiscountCode" />
+
+                <TextView
+                    android:id="@+id/tvSubtotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text=""
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvSubtotal"
+                    app:layout_constraintEnd_toEndOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toTopOf="@id/tvSubtotal" />
+
+                <TextView
+                    android:id="@+id/tvShipping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Shipping"
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toBottomOf="@id/tvSubtotal" />
+
+                <TextView
+                    android:id="@+id/tvShippingPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="--"
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvShipping"
+                    app:layout_constraintEnd_toEndOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toTopOf="@id/tvShipping" />
+
+                <TextView
+                    android:id="@+id/tvTaxes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Taxes"
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toBottomOf="@id/tvShipping" />
+
+                <TextView
+                    android:id="@+id/tvTaxesPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="--"
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvTaxes"
+                    app:layout_constraintEnd_toEndOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toTopOf="@id/tvTaxes" />
+
+            <TextView
+                    android:id="@+id/tvDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Discount"
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toBottomOf="@id/tvTaxesPrice" />
+
+                <TextView
+                    android:id="@+id/tvDiscountAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="--"
+                    android:textColor="@color/manatee"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDiscount"
+                    app:layout_constraintEnd_toEndOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toTopOf="@id/tvDiscount" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Total"
+                    android:textColor="@color/dark_blue_900"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toBottomOf="@id/tvDiscount" />
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text=""
+                    android:textColor="@color/blue_grey_800"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="@id/etDiscountCode"
+                    app:layout_constraintTop_toBottomOf="@id/tvDiscountAmount" />
+
+                <TextView
+                    android:id="@+id/btnCheckout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="70dp"
+                    android:background="@drawable/bg_btn_main_grey"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/roboto_medium"
+                    android:foreground="@drawable/bg_ripple"
+                    android:gravity="center"
+                    android:paddingVertical="16dp"
+                    android:text="@string/checkout"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTotalPrice" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/noData"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_gravity="top"
+            android:layout_marginVertical="50dp"
+            android:background="@color/transparent"
+            android:visibility="gone"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="no_data_found_animation.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

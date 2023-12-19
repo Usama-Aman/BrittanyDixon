@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10dp">
+
+                <ImageView
+                    android:id="@+id/ivCircleTop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/ic_circle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCreditOrDebitCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12sp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/credit_or_debit_card"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivCircleTop"
+                    app:layout_constraintStart_toEndOf="@id/ivCircleTop"
+                    app:layout_constraintTop_toTopOf="@id/ivCircleTop" />
+
+                <View
+                    android:id="@+id/viewOldCreditCard"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivCircleTop"
+                    app:layout_constraintEnd_toEndOf="@id/tvCreditOrDebitCard"
+                    app:layout_constraintStart_toStartOf="@id/ivCircleTop"
+                    app:layout_constraintTop_toTopOf="@id/ivCircleTop" />
+
+                <ImageView
+                    android:id="@+id/ivVisa"
+                    android:layout_width="40dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="18dp"
+                    android:src="@drawable/img_visa"
+                    app:layout_constraintStart_toStartOf="@id/tvCreditOrDebitCard"
+                    app:layout_constraintTop_toBottomOf="@id/tvCreditOrDebitCard" />
+
+
+                <TextView
+                    android:id="@+id/tvVisa"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="start"
+                    android:lineHeight="20dp"
+                    android:maxLines="2"
+                    android:text="Visa **** **** **** 6280"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvDelete"
+                    app:layout_constraintStart_toEndOf="@id/ivVisa"
+                    app:layout_constraintTop_toBottomOf="@id/tvCreditOrDebitCard"
+                    tools:ignore="UnusedAttribute" />
+
+                <TextView
+                    android:id="@+id/tvDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12sp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="5dp"
+                    android:text="@string/delete"
+                    android:textColor="@color/red_a200"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvVisa"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvVisa" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

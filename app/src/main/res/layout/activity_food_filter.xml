@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="28dp"
+            app:layout_constraintBottom_toTopOf="@id/btnFindNow"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activities.home.search_filters.FoodFilterActivity">
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/filters"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="26sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+                <TextView
+                    android:id="@+id/tvClearAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="22dp"
+                    android:alpha=".3"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Clear all"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+                <View
+                    android:id="@+id/viewTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/view_line_top"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+                <TextView
+                    android:id="@+id/tvCategoriesHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/categories"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewTop" />
+
+                <LinearLayout
+                    android:id="@+id/llCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_et_in_profile"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategoriesHead">
+
+                    <Spinner
+                        android:id="@+id/spCategories"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tilFoodType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Food Type"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llCategory" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFoodType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tilFoodType"
+                    tools:listitem="@layout/item_tags" />
+                <!--
+                 <LinearLayout
+                     android:id="@+id/layoutFoodType"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginHorizontal="14dp"
+                     android:layout_marginTop="11dp"
+                     android:orientation="horizontal"
+                     app:layout_constraintTop_toBottomOf="@id/tilFoodType">
+
+                     <TextView
+                         android:id="@+id/tvLunch"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginHorizontal="2dp"
+                         android:layout_weight="1"
+                         android:background="@drawable/bg_textview_blue"
+                         android:fontFamily="@font/roboto_regular"
+                         android:paddingVertical="11dp"
+                         android:text="Lunch"
+                         android:textAlignment="center"
+                         android:textColor="@color/white"
+                         android:textSize="15sp" />
+
+                     <TextView
+                         android:id="@+id/tvDinner"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginHorizontal="2dp"
+                         android:layout_weight="1"
+                         android:background="@drawable/bg_textview_blue"
+                         android:fontFamily="@font/roboto_regular"
+                         android:paddingVertical="11dp"
+                         android:text="Dinner"
+                         android:textAlignment="center"
+                         android:textColor="@color/white"
+                         android:textSize="15sp" />
+
+                     <TextView
+                         android:id="@+id/tv_Snack"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_marginHorizontal="2dp"
+                         android:layout_weight="1"
+                         android:background="@drawable/bg_textview_blue"
+                         android:fontFamily="@font/roboto_regular"
+                         android:paddingVertical="11dp"
+                         android:text="Snack"
+                         android:textAlignment="center"
+                         android:textColor="@color/white"
+                         android:textSize="15sp" />
+
+                     <TextView
+                         android:id="@+id/tv_breakfast"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:layout_weight="1"
+                         android:layout_marginHorizontal="2dp"
+                         android:background="@drawable/bg_textview_blue"
+                         android:fontFamily="@font/roboto_regular"
+                         android:paddingVertical="11dp"
+                         android:text="Breakfast"
+                         android:textAlignment="center"
+                         android:textColor="@color/white"
+                         android:textSize="15sp" />
+
+                 </LinearLayout>
+         -->
+                <TextView
+                    android:id="@+id/tilWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Weight"
+                    android:visibility="gone"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvFoodType" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="14dp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tilWeight"
+                    tools:listitem="@layout/item_tags" />
+                <!--<LinearLayout
+                    android:id="@+id/layoutWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginTop="11dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/tilWeight">
+
+                    <TextView
+                        android:id="@+id/tvGain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_textview_blue"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingVertical="11dp"
+                        android:text="Gain"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvLose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="2dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_textview_blue"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingVertical="11dp"
+                        android:text="Lose"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tvMaintain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_textview_blue"
+                        android:fontFamily="@font/roboto_regular"
+                        android:paddingVertical="11dp"
+                        android:layout_marginHorizontal="2dp"
+                        android:text="Maintain"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+                -->
+
+                <TextView
+                    android:id="@+id/tvCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Calories"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rvWeight" />
+
+                <TextView
+                    android:id="@+id/tv10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="10"
+                    android:textColor="@color/blue_a700"
+                    android:textSize="15sp"
+                    android:layout_marginStart="18dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCalories" />
+
+                <TextView
+                    android:id="@+id/tv15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="15"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv20"
+                    app:layout_constraintStart_toEndOf="@id/tv10"
+                    app:layout_constraintTop_toBottomOf="@id/tvCalories" />
+
+                <TextView
+                    android:id="@+id/tv20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="20"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv25"
+                    app:layout_constraintStart_toEndOf="@id/tv15"
+                    app:layout_constraintTop_toBottomOf="@id/tvCalories" />
+
+                <TextView
+                    android:id="@+id/tv25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="25"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv30"
+                    app:layout_constraintStart_toEndOf="@id/tv20"
+                    app:layout_constraintTop_toBottomOf="@id/tvCalories" />
+
+                <TextView
+                    android:id="@+id/tv30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="30"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCalories" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/seekBarCalories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="11dp"
+                    android:paddingVertical="0dp"
+                    app:haloColor="@android:color/transparent"
+                    app:labelBehavior="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv10"
+                    app:thumbColor="#2967FF"
+                    app:thumbStrokeColor="@color/white"
+                    app:thumbStrokeWidth="3dp"
+                    app:tickVisible="false"
+                    app:trackColorActive="#2967FF"
+                    app:trackColorInactive="#F2F4F6"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvIngredients"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Ingredients"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="17sp"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seekBarCalories" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="11dp"
+                    android:clipToPadding="false"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvIngredients"
+                    tools:listitem="@layout/item_ingredients" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/btnFindNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_main_grey"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:foreground="@drawable/bg_ripple"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:text="@string/find_now"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

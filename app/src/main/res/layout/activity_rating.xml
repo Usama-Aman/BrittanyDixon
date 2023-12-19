@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.my_orders.RatingActivity">
+
+        <ImageView
+            android:id="@+id/ivCross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cross"
+            android:layout_marginTop="54dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="match_parent"
+            android:layout_height="263dp"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="28dp"
+            app:cardCornerRadius="6dp"
+            android:elevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/ivCross"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/indigo_50"
+                android:src="@drawable/img_products_page"/>
+        </androidx.cardview.widget.CardView>
+
+        <RatingBar
+            android:id="@+id/rbProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rating="5"
+            android:progressTint="@color/amber_a400"
+            android:secondaryProgressTint="@color/amber_a400"
+            android:layout_marginTop="28dp"
+            android:stepSize="1"
+            app:layout_constraintTop_toBottomOf="@id/cv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginHorizontal="24dp"
+            android:textAlignment="center"
+            android:text="You have receive the order submit your rating"
+            android:textSize="24sp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/home_heading_text"
+            app:layout_constraintTop_toBottomOf="@id/rbProduct"/>
+
+        <TextView
+            android:id="@+id/tvSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginHorizontal="24dp"
+            android:paddingVertical="18dp"
+            android:textAlignment="center"
+            android:text="Submit"
+            android:textSize="14sp"
+            android:background="@drawable/bg_rect_corner_7"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
+
+
+        <TextView
+            android:id="@+id/tvReportIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="54dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Report an Issue?"
+            android:textAlignment="center"
+            android:textColor="@color/red_food_type"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubmit"
+            app:layout_constraintVertical_bias="0.943"
+            tools:layout_editor_absoluteX="16dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".6" />
+
+        <ImageView
+            android:id="@+id/ivRest"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingHorizontal="13dp"
+            android:src="@drawable/exercise_rest"
+            app:layout_constraintBottom_toTopOf="@id/g1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvRest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:elevation="5dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="REST"
+            android:textColor="@color/white"
+            android:textSize="90dp"
+            android:letterSpacing=".2"
+            app:layout_constraintBottom_toBottomOf="@id/ivRest"
+            app:layout_constraintTop_toTopOf="@id/ivRest" />
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="408dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="-20dp"
+            android:background="@color/transparent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/g1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="rest.json"
+            app:lottie_loop="true"
+            app:lottie_speed="1" />
+
+
+        <LinearLayout
+            android:id="@+id/restCounter"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g1" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="12dp"
+            android:src="@drawable/rest_counter_background"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g1" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

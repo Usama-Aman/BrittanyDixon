@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.profile_setting.ProfileSettingActivity">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivEdit"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_draw"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="@string/profile_setting"
+            android:textColor="@color/home_heading_text"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/view_line_top"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewTop">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="103dp"
+                    android:layout_height="103dp"
+                    android:layout_marginTop="25dp"
+                    android:src="@drawable/ic_placeholder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+                <View
+                    android:id="@+id/viewBelowProfileName"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/view_line_big"
+                    app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+
+                <LinearLayout
+                    android:id="@+id/llEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/viewBelowProfileName">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="4"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/email"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/llEmail">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/address"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvAddress"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llChangePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/llAddress">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/change_password"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/llPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/llChangePassword">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="@string/payment"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvPayment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llBookmark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/llPayment">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Bookmark"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvBookmark"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/llBookmark">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Shopping Cart"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvCart"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llMyOrders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/llCart">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="My Orders"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvMyOrders"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/viewBelowPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/view_line_big"
+                    app:layout_constraintTop_toBottomOf="@id/llChangePassword" />
+
+                <LinearLayout
+                    android:id="@+id/llPreferences"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/viewBelowPassword">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Workout Preferences"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvPreferences"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/llPreferencesDiet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/llPreferences">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Diet Preferences"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvPreferencesDiet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+                <View
+                    android:id="@+id/viewBelowPref"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/view_line_big"
+                    app:layout_constraintTop_toBottomOf="@id/llPreferencesDiet" />
+                <LinearLayout
+                    android:id="@+id/llInviteFriends"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/viewBelowPref">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Invite Friends"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tvInviteFriends"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llFaqsFeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/llInviteFriends">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="20dp"
+                        android:paddingVertical="18dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_medium"
+                            android:text="Faqs &amp; Feedback"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="7dp"
+                            android:ellipsize="end"
+                            android:fontFamily="@font/roboto_regular"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:textColor="@color/home_heading_text"
+                            android:textSize="16sp"
+                            app:drawableEndCompat="@drawable/ic_forward_black"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/view_line_top"
+                        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/btnLogOut"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_btn_logout"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/roboto_medium"
+                    android:foreground="@drawable/bg_ripple"
+                    android:gravity="center"
+                    android:paddingVertical="12dp"
+                    android:text="@string/log_out"
+                    android:textColor="@color/pink_a400"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/llFaqsFeedback" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

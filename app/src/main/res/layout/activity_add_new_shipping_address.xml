@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        tools:context=".activities.home.shipping_address.AddNewShippingAddressActivity">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="Shipping Address"
+            android:textColor="@color/home_heading_text"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/view_line_top"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/consAddNewAddress"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@id/btnContinue"
+            app:layout_constraintTop_toBottomOf="@id/viewTop">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Name"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="6dp"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/tvName">
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_et_in_profile"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingVertical="12dp"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="14sp"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/tvCountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/country"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCountry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintBottom_toBottomOf="@id/etCountry"
+                app:layout_constraintStart_toStartOf="@id/tilName"
+                app:layout_constraintTop_toBottomOf="@id/etCountry" />
+
+            <TextView
+                android:id="@+id/etCountry"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_et_in_profile"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingVertical="12dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/home_heading_text"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/etState"
+                app:layout_constraintStart_toStartOf="@id/tilName"
+                app:layout_constraintTop_toBottomOf="@id/tvCountry"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/state"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tilState"
+                app:layout_constraintTop_toBottomOf="@id/tilName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintBottom_toBottomOf="@id/etState"
+                app:layout_constraintStart_toStartOf="@id/etState"
+                app:layout_constraintTop_toBottomOf="@id/etState" />
+
+            <TextView
+                android:id="@+id/etState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_et_in_profile"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingVertical="12dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/home_heading_text"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/tilName"
+                app:layout_constraintStart_toEndOf="@id/etCountry"
+                app:layout_constraintTop_toBottomOf="@id/tvState"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tvCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/city"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etCountry" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:visibility="gone"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintBottom_toBottomOf="@+id/etCity"
+                app:layout_constraintStart_toStartOf="@id/etCountry"
+                app:layout_constraintTop_toBottomOf="@id/etCity" />
+
+            <TextView
+                android:id="@+id/etCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/bg_et_in_profile"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingVertical="13dp"
+                android:paddingStart="16dp"
+                android:textColor="@color/home_heading_text"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/tilPostalCode"
+                app:layout_constraintStart_toStartOf="@id/etCountry"
+                app:layout_constraintTop_toBottomOf="@id/tvCity"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tvPostalCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/postal_code"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/tilPostalCode"
+                app:layout_constraintTop_toBottomOf="@id/etState" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPostalCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="6dp"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintEnd_toEndOf="@id/tilStreetAddress"
+                app:layout_constraintStart_toEndOf="@id/etCity"
+                app:layout_constraintTop_toBottomOf="@id/tvPostalCode">
+
+                <EditText
+                    android:id="@+id/etPostalCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/bg_et_in_profile"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:nextFocusDown="@id/etStreetAddress"
+                    android:paddingVertical="12dp"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="14sp"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvStreetAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/street_address"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilCity" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilStreetAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="6dp"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/tvStreetAddress">
+
+                <EditText
+                    android:id="@+id/etStreetAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_et_in_profile"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingVertical="12dp"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="14sp"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/phone_number"
+                android:textColor="@color/home_heading_text"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tilStreetAddress" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="6dp"
+                app:boxStrokeErrorColor="@null"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:errorIconDrawable="@null"
+                app:hintEnabled="false"
+                app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber">
+
+                <EditText
+                    android:id="@+id/etPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_et_in_profile"
+                    android:fontFamily="@font/roboto_regular"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:paddingVertical="12dp"
+                    android:paddingStart="16dp"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="14sp"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_btn_main_grey"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:foreground="@drawable/bg_ripple"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

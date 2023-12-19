@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintTrending1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingHorizontal="15dp"
+            tools:ignore="RtlSymmetry">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvImage1"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                app:cardBackgroundColor="@color/view_line_big"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imgMain1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_trending"
+                    android:transitionName="transitionImage" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:id="@+id/llTitle1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/cvImage1"
+                app:layout_constraintStart_toEndOf="@id/cvImage1"
+                app:layout_constraintTop_toTopOf="@id/cvImage1">
+
+                <TextView
+                    android:id="@+id/tvName1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLines="1"
+                    android:text="VFA Boost"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="14sp"
+                    android:transitionName="title" />
+
+                <TextView
+                    android:id="@+id/tvCategory1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:maxLines="1"
+                    android:text="Backpacks"
+                    android:textColor="@color/blue_grey_600"
+                    android:textSize="11sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTrackOrder1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_ripple"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/btn_track_order"
+                app:cardCornerRadius="6dp"
+                app:layout_constraintBottom_toBottomOf="@id/cvImage1"
+                app:layout_constraintStart_toEndOf="@id/llTitle1"
+                app:layout_constraintTop_toTopOf="@id/cvImage1">
+
+                <TextView
+                    android:id="@+id/tvPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/roboto_medium"
+                    android:maxLines="1"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="7dp"
+                    android:text="$53.00"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/viewBelowTrending1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/bg_line_main"
+            app:layout_constraintTop_toBottomOf="@id/rvTrending1" />
+
+
+    </LinearLayout>
+
+</layout>

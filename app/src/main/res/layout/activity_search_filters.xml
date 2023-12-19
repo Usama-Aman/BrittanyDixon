@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.home.search_filters.WorkoutFiltersActivity">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="28dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btnFindNow">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/filters"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="26sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+                <TextView
+                    android:id="@+id/tvClearAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="22dp"
+                    android:alpha=".3"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="center"
+                    android:text="Clear all"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivBack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+                <View
+                    android:id="@+id/viewTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/view_line_top"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+                <TextView
+                    android:id="@+id/tvCategoriesHead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/categories"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewTop" />
+
+                <LinearLayout
+                    android:id="@+id/llCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_et_in_profile"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategoriesHead">
+
+                    <Spinner
+                        android:id="@+id/spCategories"
+                        style="@style/SpinnerTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="29dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/gender"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llCategory" />
+
+                <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+                    android:id="@+id/buttonGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white"
+                    android:elevation="2dp"
+                    app:borderColor="@color/grey_400"
+                    app:borderWidth=".5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvGender"
+                    app:position="0"
+                    app:radius="29.5dp"
+                    app:ripple="false"
+                    app:selectedBackground="@color/btn_track_order"
+                    app:selectedButtonRadius="30dp">
+
+                    <com.addisonelliott.segmentedbutton.SegmentedButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:checked="false"
+                        android:fontFamily="@font/roboto_medium"
+                        android:padding="21dp"
+                        app:drawable="@drawable/ic_male_white"
+                        app:drawableGravity="left"
+                        app:drawablePadding="10dp"
+                        app:drawableTint="@color/black"
+                        app:selectedBackground="@color/btn_track_order"
+                        app:selectedDrawableTint="@color/white"
+                        app:selectedTextColor="@color/white"
+                        app:text="Male"
+                        app:textColor="@color/black"
+                        app:textSize="16sp" />
+
+                    <com.addisonelliott.segmentedbutton.SegmentedButton
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:checked="true"
+                        android:fontFamily="@font/roboto_medium"
+                        android:padding="21dp"
+                        app:drawable="@drawable/ic_female_black"
+                        app:drawableGravity="left"
+                        app:drawablePadding="10dp"
+                        app:drawableTint="@color/black"
+                        app:selectedBackground="@color/btn_track_order"
+                        app:selectedDrawableTint="@color/white"
+                        app:selectedTextColor="@color/white"
+                        app:text="Female"
+                        app:textColor="@color/black"
+                        app:textSize="16sp" />
+
+                </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+
+                <TextView
+                    android:id="@+id/tvDifficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="29dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="@string/difficulty"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/buttonGroup" />
+
+                <TextView
+                    android:id="@+id/tvBeginner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Beginner"
+                    android:textColor="@color/blue_a700"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="@id/seekBarDifficulty"
+                    app:layout_constraintTop_toBottomOf="@id/tvDifficulty" />
+
+                <TextView
+                    android:id="@+id/tvModerate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Moderate"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvExpert"
+                    app:layout_constraintStart_toEndOf="@id/tvBeginner"
+                    app:layout_constraintTop_toBottomOf="@id/tvDifficulty" />
+
+                <TextView
+                    android:id="@+id/tvExpert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Expert"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@id/seekBarDifficulty"
+                    app:layout_constraintTop_toBottomOf="@id/tvDifficulty" />
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/seekBarDifficulty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="11dp"
+                    android:paddingVertical="0dp"
+                    android:stepSize="1"
+                    android:value="1"
+                    android:valueFrom="0"
+                    android:valueTo="100"
+                    app:haloColor="@android:color/transparent"
+                    app:labelBehavior="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tvBeginner"
+                    app:thumbColor="#2967FF"
+                    app:thumbStrokeColor="@color/white"
+                    app:thumbStrokeWidth="3dp"
+                    app:tickVisible="false"
+                    app:trackColorActive="#2967FF"
+                    app:trackColorInactive="#F2F4F6"
+
+                    />
+                <!--<com.jaygoo.widget.RangeSeekBar
+                    android:id="@+id/seekBarDifficulty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="11dp"
+                    app:layout_constraintTop_toBottomOf="@id/tvBeginner"
+                    app:rsb_mode="single"
+                    app:rsb_progress_color="@color/blue_a700"
+                    app:rsb_progress_drawable="@color/blue_a700"
+                    app:rsb_progress_drawable_default="@drawable/bg_seekbar"
+                    app:rsb_progress_height="6dp"
+                    app:rsb_progress_radius="6dp"
+                    app:rsb_step_auto_bonding="true"
+                    app:rsb_step_color="@color/blue_a700"
+                    app:rsb_step_height="6dp"
+                    app:rsb_step_width="1dp"
+                    app:rsb_steps="2"
+                    app:rsb_thumb_drawable="@drawable/ic_thumb" />
+                    -->
+                <TextView
+                    android:id="@+id/tvDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Workout Duration"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/seekBarDifficulty" />
+
+                <TextView
+                    android:id="@+id/tvMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Mins"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvDuration"
+                    app:layout_constraintStart_toEndOf="@id/tvDuration"
+                    app:layout_constraintTop_toTopOf="@id/tvDuration" />
+
+                <TextView
+                    android:id="@+id/tv10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="10"
+                    android:textColor="@color/blue_a700"
+                    android:textSize="15sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+                <TextView
+                    android:id="@+id/tv15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="15"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv20"
+                    app:layout_constraintStart_toEndOf="@id/tv10"
+                    app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+                <TextView
+                    android:id="@+id/tv20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="20"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv25"
+                    app:layout_constraintStart_toEndOf="@id/tv15"
+                    app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+                <TextView
+                    android:id="@+id/tv25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="25"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toStartOf="@id/tv30"
+                    app:layout_constraintStart_toEndOf="@id/tv20"
+                    app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+                <TextView
+                    android:id="@+id/tv30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginEnd="18dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="30"
+                    android:textColor="@color/blue_grey_300"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDuration" />
+
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/seekBarDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginTop="11dp"
+                    android:paddingVertical="0dp"
+                    app:haloColor="@android:color/transparent"
+                    app:labelBehavior="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tv10"
+                    app:thumbColor="#2967FF"
+                    app:thumbStrokeColor="@color/white"
+                    app:thumbStrokeWidth="3dp"
+                    app:tickVisible="false"
+                    app:trackColorActive="#2967FF"
+                    app:trackColorInactive="#F2F4F6" />
+
+                <!--        android:value="20"-->
+                <!--        android:valueFrom="10"-->
+                <!--        android:valueTo="30"-->
+
+                <!--<com.jaygoo.widget.RangeSeekBar
+                    android:id="@+id/seekBarDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="18dp"
+                    android:layout_marginTop="11dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv10"
+                    app:rsb_mode="single"
+                    app:rsb_progress_color="@color/blue_a700"
+                    app:rsb_progress_drawable="@color/blue_a700"
+                    app:rsb_progress_drawable_default="@drawable/bg_seekbar"
+                    app:rsb_progress_height="6dp"
+                    app:rsb_progress_radius="6dp"
+                    app:rsb_step_auto_bonding="true"
+                    app:rsb_step_color="@color/blue_a700"
+                    app:rsb_step_height="6dp"
+                    app:rsb_step_width="1dp"
+                    app:rsb_steps="4"
+                    app:rsb_thumb_drawable="@drawable/ic_thumb" />-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+        <TextView
+            android:id="@+id/btnFindNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_btn_main_grey"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/roboto_medium"
+            android:foreground="@drawable/bg_ripple"
+            android:gravity="center"
+            android:paddingVertical="16dp"
+            android:text="@string/find_now"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

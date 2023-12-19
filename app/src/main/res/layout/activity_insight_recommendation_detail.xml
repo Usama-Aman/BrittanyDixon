@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="80dp"
+            android:overScrollMode="never"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".activities.home.insight_rec_detail.InsightRecommendationDetailActivity">
+
+                <ImageView
+                    android:id="@+id/ivRecommendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="302dp"
+                    android:scaleType="centerCrop"
+                    android:transitionName="transitionImage"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="38dp"
+                    android:background="@drawable/bg_ripple"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="19dp"
+                    android:layout_marginTop="-10dp"
+                    android:background="@drawable/bg_transparent_rect_top_radius"
+                    android:paddingBottom="20dp"
+                    app:layout_constraintTop_toBottomOf="@id/ivRecommendation" />
+
+                <TextView
+                    android:id="@+id/tvCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/pink_a400"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivBookmark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout" />
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:textColor="@color/blue_grey_900"
+                    android:textSize="27sp"
+                    android:transitionName="title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategory" />
+
+                <TextView
+                    android:id="@+id/tvTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawablePadding="6dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="11sp"
+                    android:visibility="gone"
+                    app:drawableStartCompat="@drawable/ic_clock"
+                    app:layout_constraintStart_toStartOf="@id/tvTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <TextView
+                    android:id="@+id/tvDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="11sp"
+                    app:layout_constraintStart_toEndOf="@id/tvTime"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <ImageView
+                    android:id="@+id/ivBookmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="24dp"
+                    android:src="@drawable/ic_heart"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivRecommendation"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <com.masoudss.lib.WaveformSeekBar
+                    android:id="@+id/waveformSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:background="@color/exercise_set_background_light"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tvTime"
+                    app:wave_background_color="@color/colorAccent"
+                    app:wave_corner_radius="1dp"
+                    app:wave_gap="2dp"
+                    app:wave_gravity="center"
+                    app:wave_max_progress="100"
+                    app:wave_min_height="5dp"
+                    app:wave_progress_color="@color/colorPrimary"
+                    app:wave_width="2dp" />
+
+                <ImageView
+                    android:id="@+id/ivPlayPausePodcast"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_podcast_play"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/waveformSeekBar"
+                    app:layout_constraintLeft_toLeftOf="@id/waveformSeekBar"
+                    app:layout_constraintRight_toRightOf="@id/waveformSeekBar"
+                    app:layout_constraintTop_toTopOf="@id/waveformSeekBar" />
+
+                <TextView
+                    android:id="@+id/tvDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:lineHeight="23dp"
+                    android:textColor="@color/grey_700"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+                <WebView
+                    android:id="@+id/webView"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTime"
+                    tools:ignore="WebViewLayout" />
+
+                <com.faltenreich.skeletonlayout.SkeletonLayout
+                    android:id="@+id/skeletonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTime"
+                    app:maskColor="#F4F4F4"
+                    app:maskCornerRadius="20dp"
+                    app:shimmerColor="#E6E6E6">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="40dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="60dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="80dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="18dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="100dp"
+                            app:cardCornerRadius="30dp"
+                            app:cardElevation="10dp" />
+                    </LinearLayout>
+                </com.faltenreich.skeletonlayout.SkeletonLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.loopeer.shadow.ShadowView
+            android:id="@+id/shadow_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:shadowColor="@color/black_of_18"
+            app:shadowMarginTop="6dp"
+            app:shadowRadius="100dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardPreventCornerOverlap="false"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLikes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadingEdge="horizontal"
+                    android:paddingVertical="10dp"
+                    android:requiresFadingEdge="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ripple"
+                        android:clickable="true"
+                        android:drawablePadding="4dp"
+                        android:focusable="true"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:text="Like (162)"
+                        android:textColor="@color/home_heading_text"
+                        android:textSize="11sp"
+                        app:drawableStartCompat="@drawable/ic_like"
+                        app:layout_constraintEnd_toStartOf="@id/tvShare"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/tvShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_ripple"
+                        android:clickable="true"
+                        android:drawablePadding="4dp"
+                        android:focusable="true"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:text="Share"
+                        android:textColor="@color/home_heading_text"
+                        android:textSize="11sp"
+                        app:drawableStartCompat="@drawable/ic_share"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvLike"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SmallSp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </com.loopeer.shadow.ShadowView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

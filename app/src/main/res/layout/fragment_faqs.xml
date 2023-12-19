@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingBottom="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.home.faq_feedback.faqs_tab.FaqsFragment">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/roboto_medium"
+                android:lineHeight="33dp"
+                android:text="We’re here to help you with anything and everything on Brittany Dixon Application"
+                android:textColor="@color/home_heading_text"
+                android:textSize="21sp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,UnusedAttribute" />
+
+            <TextView
+                android:id="@+id/tvBelowTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_regular"
+                android:lineHeight="23dp"
+                android:text="In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et elit eget elit facilisis tristique."
+                android:textColor="@color/grey_700"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle"
+                tools:ignore="HardcodedText,UnusedAttribute" />
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="18dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_et_search"
+                android:drawableStart="@drawable/ic_search_active"
+                android:drawablePadding="8dp"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/search"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:paddingVertical="9dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/et_hint"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/tvBelowTitle"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tvFaq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="FAQ"
+                android:textColor="@color/home_heading_text"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etSearch" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvFaqs"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:paddingBottom="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFaq" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/noData"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@color/transparent"
+                android:visibility="gone"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="no_data_found_animation.json"
+                app:lottie_loop="true"
+                app:lottie_speed="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFaq"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

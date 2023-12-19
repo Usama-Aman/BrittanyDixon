@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="Podcast"
+            android:textColor="@color/home_heading_text"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toBottomOf="@id/ivBack"
+            app:layout_constraintTop_toTopOf="@id/ivBack" />
+
+        <ImageView
+            android:id="@+id/ivPodcastList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_ripple"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_podcast_list"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/view_line_top"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".55" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".8" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPodcastTile"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:alpha=".14"
+            app:cardBackgroundColor="@color/podcast_card_view_background"
+            app:cardCornerRadius="13dp"
+            app:layout_constraintBottom_toBottomOf="@id/g1"
+            app:layout_constraintTop_toBottomOf="@id/viewTop" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivPodcastImage"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="30dp"
+            android:elevation="5dp"
+            app:layout_constraintLeft_toLeftOf="@id/cvPodcastTile"
+            app:layout_constraintRight_toRightOf="@id/cvPodcastTile"
+            app:layout_constraintTop_toTopOf="@id/cvPodcastTile" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="60dp"
+            android:layout_marginVertical="20dp"
+            android:background="@color/transparent"
+            android:elevation="3dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="@id/cvPodcastTile"
+            app:layout_constraintTop_toBottomOf="@id/ivPodcastImage">
+
+
+            <TextView
+                android:id="@+id/tvPodcastTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:lines="2"
+                android:maxLines="2"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+
+            <TextView
+                android:id="@+id/tvPodcastSingerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:lines="1"
+                android:singleLine="true"
+                android:textColor="@color/podcast_singer_name"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+        <com.masoudss.lib.WaveformSeekBar
+            android:id="@+id/waveformSeekBar1"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginTop="50dp"
+            android:visibility="gone"
+            android:background="@color/exercise_set_background_light"
+            android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@id/g2"
+            app:layout_constraintTop_toBottomOf="@id/g1"
+            app:wave_background_color="#707070"
+            app:wave_corner_radius="1dp"
+            app:wave_gap="2dp"
+            app:wave_gravity="center"
+            app:wave_min_height="5dp"
+            app:wave_progress_color="@color/podcast_card_view_background"
+            app:wave_width="2dp" />
+
+        <space.siy.waveformview.WaveFormView
+            android:id="@+id/waveformSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/exercise_set_background_light"
+            android:padding="10dp"
+            app:blockColor="#707070"
+            app:blockColorPlayed="@color/podcast_card_view_background"
+            app:blockWidth="8"
+            app:bottomBlockScale=".8"
+            app:layout_constraintBottom_toTopOf="@id/g2"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/g1"
+            app:peakMode="peakmode_max"
+            app:secPerBlock="0.1"
+            app:showTimeText="true"
+            app:textBgColor="@color/black"
+            app:textColor="@color/white"
+            app:topBlockScale=".8" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:max="1000"
+            android:min="0"
+            android:padding="10dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/g2"
+            app:layout_constraintTop_toBottomOf="@id/g1" />
+
+        <com.frolo.waveformseekbar.WaveformSeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:wave_progress="0"
+            app:wave_background_color="#707070"
+            app:wave_progress_color="@color/podcast_card_view_background"
+            app:layout_constraintBottom_toTopOf="@id/g2"
+            app:layout_constraintTop_toBottomOf="@id/g1"  />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g2">
+
+            <ImageView
+                android:id="@+id/ivReverse"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="20dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_fast_reverse" />
+
+            <ImageView
+                android:id="@+id/ivPlayPause"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_podcast_play" />
+
+            <ImageView
+                android:id="@+id/ivForward"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:padding="10dp"
+                android:src="@drawable/ic_fast_forward" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

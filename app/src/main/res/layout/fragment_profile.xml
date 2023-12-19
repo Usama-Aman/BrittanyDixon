@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".activities.home.profile_tab.ProfileFragment">
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@color/transparent">-->
+
+<!--            <com.google.android.material.appbar.CollapsingToolbarLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:animateLayoutChanges="true"-->
+<!--                android:background="@color/transparent"-->
+<!--                app:contentScrim="?attr/colorPrimary"-->
+<!--                app:layout_collapseParallaxMultiplier=".9"-->
+<!--                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">-->
+
+<!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                    android:id="@+id/consTop"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/bg_profile_fragment_top"-->
+<!--                    android:paddingBottom="18dp"-->
+<!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+<!--                    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                        android:id="@+id/ivProfile"-->
+<!--                        android:layout_width="60dp"-->
+<!--                        android:layout_height="60dp"-->
+<!--                        android:layout_marginStart="20dp"-->
+<!--                        android:layout_marginTop="20dp"-->
+<!--                        android:src="@drawable/iv_profile"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvProfileName"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        android:layout_marginHorizontal="18dp"-->
+<!--                        android:fontFamily="@font/roboto_bold"-->
+<!--                        android:gravity="bottom"-->
+<!--                        android:text="Mina Hudson"-->
+<!--                        android:textColor="@color/home_heading_text"-->
+<!--                        android:textSize="24sp"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:maxLines="1"-->
+<!--                        app:layout_constraintEnd_toStartOf="@id/ivSetting"-->
+<!--                        app:layout_constraintBottom_toTopOf="@id/tvEmail"-->
+<!--                        app:layout_constraintStart_toEndOf="@id/ivProfile"-->
+<!--                        app:layout_constraintTop_toTopOf="@id/ivProfile" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tvEmail"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="0dp"-->
+<!--                        android:alpha=".3"-->
+<!--                        android:fontFamily="@font/roboto_regular"-->
+<!--                        android:gravity="top"-->
+<!--                        android:text="mina.hudson@email.com"-->
+<!--                        android:textColor="@color/home_heading_text"-->
+<!--                        android:textSize="14sp"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:maxLines="1"-->
+<!--                        app:layout_constraintEnd_toEndOf="@id/tvProfileName"-->
+<!--                        app:layout_constraintBottom_toBottomOf="@id/ivProfile"-->
+<!--                        app:layout_constraintStart_toStartOf="@id/tvProfileName"-->
+<!--                        app:layout_constraintTop_toBottomOf="@id/tvProfileName" />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/ivSetting"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginEnd="17dp"-->
+<!--                        android:clickable="true"-->
+<!--                        android:focusable="true"-->
+<!--                        android:padding="6dp"-->
+<!--                        android:src="@drawable/ic_setting"-->
+<!--                        app:layout_constraintBottom_toBottomOf="@id/ivProfile"-->
+<!--                        app:layout_constraintEnd_toEndOf="parent"-->
+<!--                        app:layout_constraintTop_toTopOf="@id/ivProfile" />-->
+
+<!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<!--            </com.google.android.material.appbar.CollapsingToolbarLayout>-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+        <!--        <androidx.core.widget.NestedScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:fillViewport="true"-->
+        <!--            app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <!--            app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_profile_fragment_top"
+                android:paddingBottom="18dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/iv_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="18dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="bottom"
+                    android:text="Mina Hudson"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="24sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toStartOf="@id/ivSetting"
+                    app:layout_constraintBottom_toTopOf="@id/tvEmail"
+                    app:layout_constraintStart_toEndOf="@id/ivProfile"
+                    app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:alpha=".3"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="top"
+                    android:text="mina.hudson@email.com"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="14sp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toEndOf="@id/tvProfileName"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                    app:layout_constraintStart_toStartOf="@id/tvProfileName"
+                    app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+
+                <ImageView
+                    android:id="@+id/ivSetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="17dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_setting"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/consTop"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/light_blue_a200"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/light_blue_a200"
+                app:tabTextColor="@color/black" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:animateLayoutChanges="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabs" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        </androidx.core.widget.NestedScrollView>-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+
+            <variable
+                name="viewModel"
+                type="com.cp.brittany.dixon.activities.view_models.HomeViewModel" />
+        </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".activities.home.profile_tab.ProfileFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_profile_fragment_top"
+                android:paddingBottom="18dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivProfile"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/iv_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/tvProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginHorizontal="18dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="bottom"
+                    android:text="Mina Hudson"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvEmail"
+                    app:layout_constraintStart_toEndOf="@id/ivProfile"
+                    app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:alpha=".3"
+                    android:fontFamily="@font/roboto_regular"
+                    android:gravity="top"
+                    android:text="mina.hudson@email.com"
+                    android:textColor="@color/home_heading_text"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                    app:layout_constraintStart_toStartOf="@id/tvProfileName"
+                    app:layout_constraintTop_toBottomOf="@id/tvProfileName" />
+
+                <ImageView
+                    android:id="@+id/ivSetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="17dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_setting"
+                    app:layout_constraintBottom_toBottomOf="@id/ivProfile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivProfile" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.bosphere.fadingedgelayout.FadingEdgeLayout
+                android:id="@+id/fading_edge_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:fel_edge="left|right"
+                app:fel_size_left="80dp"
+                app:fel_size_right="80dp"
+                app:layout_constraintTop_toBottomOf="@id/consTop">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMonths"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="18dp"
+                    android:paddingVertical="10dp"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/consTop"
+                    tools:listitem="@layout/item_months" />
+
+                <com.yarolegovich.discretescrollview.DiscreteScrollView
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    android:visibility="gone"
+                    app:dsv_orientation="horizontal" />
+
+            </com.bosphere.fadingedgelayout.FadingEdgeLayout>
+
+            <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+                android:id="@+id/singleRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:deselection="false"
+                app:layout_constraintTop_toBottomOf="@id/fading_edge_layout"
+                app:longPress="false"
+                app:multiSelection="false" />
+
+            <View
+                android:id="@+id/viewBelowCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/view_line_big"
+                app:layout_constraintTop_toBottomOf="@id/singleRow" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewBelowCalendar">
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:background="@color/white"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/light_blue_a200"
+                    app:tabMode="fixed"
+                    app:tabTextColor="@color/black"
+                    app:tabSelectedTextColor="@color/light_blue_a200"
+                    />
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="false"
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>-->
